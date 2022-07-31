@@ -1,0 +1,14 @@
+{
+  "name": "gitit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nice"
+  },
+  "keywords": [
+    "nice"
+  ],
+  "author": "Purplehippo911",
+  "license": "ISC"
+}
