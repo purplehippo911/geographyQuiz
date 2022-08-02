@@ -12,43 +12,36 @@
       href="https://fonts.googleapis.com/css2?family=Solway:wght@400;500;700&family=Tenor+Sans&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
-    <main class="main">
-      <section class="first-section">
-        <div class="container row">
-          <section class="col col--question">
-            <h1>How many states does the US 🇺🇸 have?</h1>
-            <picture>
-              <img src="images/us.png" alt="north america on a map" />
-            </picture>
-          </section>
-          <section class="col col--answers">
-            <div class="first__answer answer1">51</div>
-            <div class="first__answer answer2">20</div>
-            <div class="first__answer answer3">50</div>
-            <div class="first__answer answer4">30</div>
-          </section>
-        </div>
-      </section>
+    <div class="hero">
+      <div class="container row">
 
-      <section class="second-section">
-        <div class="container row">
-          <section class="col col--question row">
-            <h1>What is the capital of Saudi Arabia</h1>
-            <picture>
-              <img src="images/saudiarabia.png" alt="Saudi Arabia on a map" />
-            </picture>
+        <section id="question-container" class="hide">
+        <h1>question</h1>
+          <picture>
+            <img src="#" alt="image" />
+          </picture>
+        </section>
+        
+        <section class="controls">
+          <button id="start-btn" class="start-btn btn">Start</button>
+          <button id="next-btn" class="next-btn btn hide">Next</button>
+        </section>
+          
+          <section id="answer-buttons" class="answers">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
           </section>
-          <section class="col col--answers">
-            <div class="first__answer answer1">Jeddah</div>
-            <div class="first__answer answer2">Mecca</div>
-            <div class="first__answer answer3">Riyadh</div>
-            <div class="first__answer answer4">Sana</div>
-          </section>
-        </div>
-      </section>
-    </main>
+      </div>
+    </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
