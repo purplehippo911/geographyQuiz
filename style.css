@@ -4,6 +4,7 @@
     --wrongAnswer:#db5737;
     --rightAnswer:#3da54f;
     --green:#42a882;
+    --answersBg:#f7f08d;
 }
 
 *,
@@ -14,18 +15,23 @@
 
 body {
     margin: 0;
+    font-size:26px;
     font-family: 'Solway', serif;
+
 }
 
-.main {
-    padding:3rem;
+.hero {
+    padding:200px 0;
+    background:var(--green);
 }
 
 .container {
-    width:90%;
+    width:80%;
     margin: 0 auto;
     padding:2rem;
     background:var(--mainBg);
+    border-radius:10px;
+    box-shadow:0 0 10px;
 }
 
 img {
@@ -39,26 +45,55 @@ img {
     justify-content:center;
 }
 
-.col {
-    width:100%;
-    background:#42a882;
-}
-
-
-.col--answers {
+.answers {
     display:grid;
     gap:2rem;
     grid-template-columns:repeat(2, minmax(50px, 1fr));
+    margin:2rem 0;
 }
 
-.first__answer {
-    width:fit-content;
-    padding:2rem;
+.btn {
+    font-size:20px;
+    padding:.5rem;
+    border:5px solid var(--green);
     background:var(--white);
-    font-family: 'Tenor Sans', sans-serif;
+    border-radius:5px;
+    outline:none;
+    font-family: 'Solway', serif;
     cursor: pointer;
 }
 
-.answer2, .answer4 {
-    margin-left: auto;
+.btn:hover {
+    border-color:black;
 }
+
+.btn.correct{
+  display: inline-block;
+  margin: 0 0.5rem;
+  background:var(--rightAnswer);
+
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration:1.8s; 
+    
+}
+
+.btn.wrong {
+    background:var(--wrongAnswer);
+}
+
+.controls {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.start-btn, .next-btn {
+    font-size:1.5rem;
+    font-weight:bold;
+    padding:1rem 2rem;
+}
+
+.hide {
+    display:none;
+}
+
