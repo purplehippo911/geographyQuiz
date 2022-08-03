@@ -9,6 +9,7 @@
   "keywords": [
     "nice"
   ],
+  "type":"module",
   "author": "Purplehippo911",
   "license": "ISC",
   "dependencies": {
