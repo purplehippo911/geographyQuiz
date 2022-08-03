@@ -30,10 +30,10 @@ const questions = [
         ]
     }
 ];
-const randNum = Math.floor(Math.random() *( questions.length - 1));
-const randomQuestion = questions[randNum];
+const randNum = Math.round(Math.random() * questions.length );
 
 function setNextQuestion() {
+    const randomQuestion = questions[randNum];
     showQuestion(randomQuestion);
     // lastQuestion = randomQuestion;
     // if(randomQuestion == lastQuestion) {
@@ -89,5 +89,11 @@ startButton.addEventListener('click', () => {
 
 nextButton.addEventListener("click", () => {
     // currentQuestionIndex++;
+    clearClass(hero);
+    Array.from(answerButtons.children).forEach(button => {
+        clearClass(button);
+        button.classList.add('hide');
+    })
     setNextQuestion();
+
 } )
