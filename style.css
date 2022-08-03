@@ -67,7 +67,7 @@ img {
     border-color:black;
 }
 
-.btn.correct{
+.correct{
   display: inline-block;
   margin: 0 0.5rem;
   background:var(--rightAnswer);
@@ -77,7 +77,7 @@ img {
     
 }
 
-.btn.wrong {
+.wrong {
     background:var(--wrongAnswer);
 }
 
