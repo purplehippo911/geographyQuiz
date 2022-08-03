@@ -1,8 +1,12 @@
+const hero = document.querySelector('.hero');
 const startButton = document.querySelector('#start-btn');
+const nextButton = document.querySelector('#next-btn');
 const questionContainer = document.querySelector('#question-container');
 const questionTitle = document.querySelector('.question'); 
 const answerButtons = document.querySelector('#answer-buttons');
 const questionImage = document.querySelector('picture > img');
+let currentQuestionIndex;
+let lastQuestion;
 const questions = [
     {
         question: 'How many states are there in the US?',
@@ -26,11 +30,15 @@ const questions = [
         ]
     }
 ];
-const randNum = Math.round(Math.random() * questions.length);
+const randNum = Math.floor(Math.random() *( questions.length - 1));
 const randomQuestion = questions[randNum];
 
 function setNextQuestion() {
     showQuestion(randomQuestion);
+    // lastQuestion = randomQuestion;
+    // if(randomQuestion == lastQuestion) {
+    //     showQuestion(randomQuestion)
+    // }
     randomQuestion.answers.reverse();
 }
 
@@ -49,13 +57,37 @@ function showQuestion(question) {
     });
 }
 
-function selectAnswer() {
-
+function selectAnswer(e) {
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
+    setClass(hero, correct);
+    Array.from(answerButtons.children).forEach(button => {
+        setClass(button, button.dataset.correct)
+    })
+    nextButton.classList.remove('hide');
 }
 
+function setClass(element, correct) {
+    clearClass(element);
+    if (correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+function clearClass(element){
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
+}
 
 startButton.addEventListener('click', () => {
     startButton.classList.add('hide');
     questionContainer.classList.remove('hide');
     setNextQuestion();
 });
+
+nextButton.addEventListener("click", () => {
+    // currentQuestionIndex++;
+    setNextQuestion();
+} )
