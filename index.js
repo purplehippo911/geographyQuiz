@@ -6,7 +6,6 @@ const questionTitle = document.querySelector('.question');
 const answerButtons = document.querySelector('#answer-buttons');
 const questionImage = document.querySelector('picture > img');
 let currentQuestionIndex;
-let lastQuestion;
 const questions = [
     {
         question: 'How many states are there in the US?',
@@ -30,16 +29,12 @@ const questions = [
         ]
     }
 ];
-const randNum = Math.round(Math.random() * questions.length );
 
 function setNextQuestion() {
-    const randomQuestion = questions[randNum];
-    showQuestion(randomQuestion);
-    // lastQuestion = randomQuestion;
-    // if(randomQuestion == lastQuestion) {
-    //     showQuestion(randomQuestion)
-    // }
+    const randomQuestion = questions[currentQuestionIndex];
     randomQuestion.answers.reverse();
+    showQuestion(randomQuestion);
+    
 }
 
 function showQuestion(question) {
@@ -83,12 +78,13 @@ function clearClass(element){
 
 startButton.addEventListener('click', () => {
     startButton.classList.add('hide');
+    currentQuestionIndex = 0;
     questionContainer.classList.remove('hide');
     setNextQuestion();
 });
 
 nextButton.addEventListener("click", () => {
-    // currentQuestionIndex++;
+    currentQuestionIndex++;
     clearClass(hero);
     Array.from(answerButtons.children).forEach(button => {
         clearClass(button);
