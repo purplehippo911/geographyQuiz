@@ -67,18 +67,25 @@ img {
     border-color:black;
 }
 
+.btn.correct {
+    margin: 0 0.5rem;
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    animation-duration:2.5s; 
+}
+
+.btn.wrong {
+    animation: swing; /* referring directly to the animation's @keyframe declaration */
+    animation-duration:2.5s; 
+}
+
 .correct{
   display: inline-block;
-  margin: 0 0.5rem;
   background:var(--rightAnswer);
-
-  animation: bounce; /* referring directly to the animation's @keyframe declaration */
-  animation-duration:1.8s; 
-    
 }
 
 .wrong {
-    background:var(--wrongAnswer);
+   display: inline-block;
+   background:var(--wrongAnswer);
 }
 
 .controls {
