@@ -27,6 +27,36 @@ const questions = [
             { text: 'Mekkah', correct:false },
             { text: 'Jeddah', correct:true },
         ]
+    },
+    {
+        question:'What is the capital of Australia?',
+        image:'images/saudi.png',
+        answers: [
+            { text: 'Sydney', correct:false },
+            { text: 'Perth', correct:false },
+            { text: 'Canberra', correct:false },
+            { text: 'Melbourne', correct:true },
+        ]
+    },
+    {
+        question:'In which continent can you find The Maldives?',
+        image:'images/saudi.png',
+        answers: [
+            { text: 'Europe', correct:false },
+            { text: 'Asia', correct:false },
+            { text: 'Oceania', correct:false },
+            { text: 'North America', correct:true },
+        ]
+    },
+    {
+        question:'What continent has the most countries?',
+        image:'images/saudi.png',
+        answers: [
+            { text: 'Europe', correct:false },
+            { text: 'Asia', correct:false },
+            { text: 'South America', correct:false },
+            { text: 'Africa', correct:true },
+        ]
     }
 ];
 
